@@ -1,8 +1,8 @@
 let dishName;
-let dishPrice=0;
 let drinkName;
-let drinkPrice=0;
 let dessertName;
+let dishPrice=0;
+let drinkPrice=0;
 let dessertPrice=0;
 
 function selectDish(classePrato) {
@@ -13,8 +13,10 @@ function selectDish(classePrato) {
 
     const option = document.querySelector("." + classePrato);
     option.classList.add("selected-option");
-    // dishName = option.option__itemName.innerHTML;
-    // dishPrice = option.option__itemPrice.innerHTML;
+
+    dishName = option.querySelector(".option__itemName").innerHTML;
+    dishPrice = option.querySelector(".option__itemPrice").innerHTML;
+    dishPrice = parseFloat(dishPrice.substr(2));
 }
 
 function selectDrink(classeBebida) {
@@ -25,8 +27,10 @@ function selectDrink(classeBebida) {
 
     const option = document.querySelector("." + classeBebida);
     option.classList.add("selected-option");
-    // drinkName = option.option__itemName.innerHTML;
-    // drinkPrice = option.option__itemPrice.innerHTML;
+
+    drinkName = option.querySelector(".option__itemName").innerHTML;
+    drinkPrice = option.querySelector(".option__itemPrice").innerHTML;
+    drinkPrice = parseFloat(drinkPrice.substr(2));
 }
 
 function selectDessert(classeSobremesa) {
@@ -37,15 +41,14 @@ function selectDessert(classeSobremesa) {
 
     const option = document.querySelector("." + classeSobremesa);
     option.classList.add("selected-option");
-    // dessertName = option.option__itemName.innerHTML;
-    // dessertPrice = option.option__itemPrice.innerHTML;
+
+    dessertName = option.querySelector(".option__itemName").innerHTML;
+    dessertPrice = option.querySelector(".option__itemPrice").innerHTML;
+    dessertPrice = parseFloat(dessertPrice.substr(2));
 }
 
 
-function allChosen(){
-    if(true){
-    // if(dishName!==null && drinkName!==null && dessertName!==null){
-        document.querySelector("button>p").innerHTML("Fechar pedido");
-    }
-}
-allChosen()
+// if(dishName!==null && drinkName!==null && dessertName!==null){
+//     let botao = document.querySelector(".fecharPedido");
+//     botao.innerHTML("Fechar pedido");
+// }
