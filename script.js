@@ -1,3 +1,4 @@
+// Variáveis globais
 let dishName;
 let drinkName;
 let dessertName;
@@ -6,6 +7,8 @@ let drinkPrice=0;
 let dessertPrice=0;
 let total=0;
 
+
+// Selecionar prato
 function selectDish(classePrato) {
     const selected = document.querySelector(".dish .selected-option");
     if(selected !== null) {
@@ -21,6 +24,7 @@ function selectDish(classePrato) {
     total = dishPrice + drinkPrice + dessertPrice;
 }
 
+// Selecionar bebida
 function selectDrink(classeBebida) {
     const selected = document.querySelector(".drink .selected-option");
     if(selected !== null) {
@@ -36,6 +40,7 @@ function selectDrink(classeBebida) {
     total = dishPrice + drinkPrice + dessertPrice;
 }
 
+// Selecionar sobremesa
 function selectDessert(classeSobremesa) {
     const selected = document.querySelector(".dessert .selected-option");
     if(selected !== null) {
@@ -51,6 +56,7 @@ function selectDessert(classeSobremesa) {
     total = dishPrice + drinkPrice + dessertPrice;
 }
 
+// Liberar botão para "Fechar pedido"
 function closeOrder() {
     if(dishPrice>0 && drinkPrice>0 && dessertPrice>0){
         let botao = document.querySelector(".closeOrder");
@@ -61,6 +67,7 @@ function closeOrder() {
     }
 }
 
+// Abrir tela de confirmação
 function goToConfirmationScreen() {
     if(dishPrice==0 | drinkPrice==0 | dessertPrice==0){
     } else {
@@ -76,11 +83,13 @@ function goToConfirmationScreen() {
     }
 }
 
+// Cancelar pedido
 function cancelOrder() {
     let telaConfirmacao = document.querySelector(".confirmationScreen");
     telaConfirmacao.classList.add("hidden");
 }
 
+// Integração com WhatsApp
 function goToWhatsApp() {
     let userName = prompt("Qual é o seu nome?")
     let userNumber = prompt("Qual é o número do seu telefone? (XX) 9XXXX-XXXX").replace('(','').replace(')','').replace('-','').replace(' ','')
