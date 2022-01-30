@@ -17,33 +17,34 @@
         <span>Sua comida em 6 minutos</span>
     </header>
     <main>
+        <section class="confirmacao hidden"></section>
         <section class="dish" data-identifier="dishes">
             <span>Primeiro, seu prato</span>
             <div class="options">
-                <div class="option selected-option" data-identifier="food-option">
+                <div class="option hamburguer" onclick="selectDish('hamburguer')" data-identifier="food-option">
                     <img class="thumbnail" src="media/hamburguer.jpg" alt="Hamburguer">
-                    <span class="option__item-name" data-identifier="food-title">Hamburguer</span>
-                    <span class="option__item-description">Acompanha batata frita</span>
+                    <span class="option__itemName" data-identifier="food-title">Hamburguer</span>
+                    <span class="option__itemDescription">Acompanha batata frita</span>
                     <div>
-                        <span class="option__item-price" data-identifier="food-price">R$ 30,00</span>
-                        <ion-icon class="selected-option" name="checkmark-circle"></ion-icon>
-                    </div>
-                </div>
-                <div class="option" data-identifier="food-option">
-                    <img class="thumbnail" src="media/quesadilla.png" alt="Quesadilla">
-                    <span class="option__item-name" data-identifier="food-title">Quesadilla</span>
-                    <span class="option__item-description">Acompanha batata frita</span>
-                    <div>
-                        <span class="option__item-price" data-identifier="food-price">R$ 25,00</span>
+                        <span class="option__itemPrice" data-identifier="food-price">R$ 30,00</span>
                         <ion-icon name="checkmark-circle"></ion-icon>
                     </div>
                 </div>
-                <div class="option" data-identifier="food-option">
-                    <img class="thumbnail" src="media/wings.png" alt="Chicken wings">
-                    <span class="option__item-name" data-identifier="food-title">Chicken wings</span>
-                    <span class="option__item-description">Acompanha batata frita</span>
+                <div class="option quesadilla" onclick="selectDish('quesadilla')" data-identifier="food-option">
+                    <img class="thumbnail" src="media/quesadilla.png" alt="Quesadilla">
+                    <span class="option__itemName" data-identifier="food-title">Quesadilla</span>
+                    <span class="option__itemDescription">Acompanha batata frita</span>
                     <div>
-                        <span class="option__item-price" data-identifier="food-price">R$ 20,00</span>
+                        <span class="option__itemPrice" data-identifier="food-price">R$ 25,00</span>
+                        <ion-icon name="checkmark-circle"></ion-icon>
+                    </div>
+                </div>
+                <div class="option wings" onclick="selectDish('wings')" data-identifier="food-option">
+                    <img class="thumbnail" src="media/wings.png" alt="Chicken wings">
+                    <span class="option__itemName" data-identifier="food-title">Chicken wings</span>
+                    <span class="option__itemDescription">Acompanha batata frita</span>
+                    <div>
+                        <span class="option__itemPrice" data-identifier="food-price">R$ 20,00</span>
                         <ion-icon name="checkmark-circle"></ion-icon>
                     </div>
                 </div>
@@ -52,30 +53,30 @@
         <section class="drink" data-identifier="drinks">
             <span>Agora, sua bebida</span>
             <div class="options">
-                <div class="option" data-identifier="food-option">
+                <div class="option coca" onclick="selectDrink('coca')" data-identifier="food-option">
                     <img class="thumbnail" src="media/coca.png" alt="Coca-cola">
-                    <span class="option__item-name" data-identifier="food-title">Coca-cola</span>
-                    <span class="option__item-description">Bem gelada</span>
+                    <span class="option__itemName" data-identifier="food-title">Coca-cola</span>
+                    <span class="option__itemDescription">Bem gelada</span>
                     <div>
-                        <span class="option__item-price" data-identifier="food-price">R$ 6,00</span>
+                        <span class="option__itemPrice" data-identifier="food-price">R$ 6,00</span>
                         <ion-icon name="checkmark-circle"></ion-icon>
                     </div>
                 </div>
-                <div class="option" data-identifier="food-option">
+                <div class="option guarana" onclick="selectDrink('guarana')" data-identifier="food-option">
                     <img class="thumbnail" src="media/guarana.png" alt="Guarana">
-                    <span class="option__item-name" data-identifier="food-title">Guaraná</span>
-                    <span class="option__item-description">Bem gelado</span>
+                    <span class="option__itemName" data-identifier="food-title">Guaraná</span>
+                    <span class="option__itemDescription">Bem gelado</span>
                     <div>
-                        <span class="option__item-price" data-identifier="food-price">R$ 5,00</span>
+                        <span class="option__itemPrice" data-identifier="food-price">R$ 5,00</span>
                         <ion-icon name="checkmark-circle"></ion-icon>
                     </div>
                 </div>
-                <div class="option" data-identifier="food-option">
+                <div class="option agua" onclick="selectDrink('agua')" data-identifier="food-option">
                     <img class="thumbnail" src="media/agua.png" alt="Agua">
-                    <span class="option__item-name" data-identifier="food-title">Água</span>
-                    <span class="option__item-description">Bem gelada</span>
+                    <span class="option__itemName" data-identifier="food-title">Água</span>
+                    <span class="option__itemDescription">Bem gelada</span>
                     <div>
-                        <span class="option__item-price" data-identifier="food-price">R$ 4,00</span>
+                        <span class="option__itemPrice" data-identifier="food-price">R$ 4,00</span>
                         <ion-icon name="checkmark-circle"></ion-icon>
                     </div>
                 </div>
@@ -84,33 +85,56 @@
         <section class="dessert" data-identifier="desserts">
             <span>Por fim, sua sobremesa</span>
             <div class="options">
-                <div class="option" data-identifier="food-option">
+                <div class="option brownie" onclick="selectDessert('brownie')" data-identifier="food-option">
                     <img class="thumbnail" src="media/brownie.png" alt="Brownie">
-                    <span class="option__item-name" data-identifier="food-title">Brownie</span>
-                    <span class="option__item-description">Acompanha sorvete</span>
+                    <span class="option__itemName" data-identifier="food-title">Brownie</span>
+                    <span class="option__itemDescription">Acompanha sorvete</span>
                     <div>
-                        <span class="option__item-price" data-identifier="food-price">R$ 18,00</span>
+                        <span class="option__itemPrice" data-identifier="food-price">R$ 18,00</span>
                         <ion-icon name="checkmark-circle"></ion-icon>
                     </div>
                 </div>
-                <div class="option" data-identifier="food-option">
+                <div class="option smores" onclick="selectDessert('smores')" data-identifier="food-option">
                     <img class="thumbnail" src="media/smores.png" alt="Smores">
-                    <span class="option__item-name" data-identifier="food-title">Smores</span>
-                    <span class="option__item-description">Acompanha sorvete</span>
+                    <span class="option__itemName" data-identifier="food-title">Smores</span>
+                    <span class="option__itemDescription">Acompanha sorvete</span>
                     <div>
-                        <span class="option__item-price" data-identifier="food-price">R$ 16,00</span>
+                        <span class="option__itemPrice" data-identifier="food-price">R$ 16,00</span>
                         <ion-icon name="checkmark-circle"></ion-icon>
                     </div>
                 </div>
-                <div class="option" data-identifier="food-option">
+                <div class="option sorvete" onclick="selectDessert('sorvete')" data-identifier="food-option">
                     <img class="thumbnail" src="media/sorvete.png" alt="Sorvete">
-                    <span class="option__item-name" data-identifier="food-title">Sorvete</span>
-                    <span class="option__item-description">Sabor flocos</span>
+                    <span class="option__itemName" data-identifier="food-title">Sorvete</span>
+                    <span class="option__itemDescription">Sabor flocos</span>
                     <div>
-                        <span class="option__item-price" data-identifier="food-price">R$ 14,00</span>
+                        <span class="option__itemPrice" data-identifier="food-price">R$ 14,00</span>
                         <ion-icon name="checkmark-circle"></ion-icon>
                     </div>
                 </div>
+            </div>
+        </section>
+        <section class="confirmacao hidden">
+            <div class="janela">
+                <p class="titulo">Confirme seu pedido</p>
+                <div class="escolha">
+                    <p class="opcao-prato">Prato</p>
+                    <p class="preco-prato">20,90</p>
+                </div>
+                <div class="escolha">
+                    <p class="opcao-bebida">Bebida</p>
+                    <p class="preco-bebida">4,90</p>
+                </div>
+                <div class="escolha">
+                    <p class="opcao-sobremesa">Sobremesa</p>
+                    <p class="preco-sobremesa">7,90</p>
+                </div>
+                <div class="escolha total">
+                    <p class="total">TOTAL</p>
+                    <p class="preco-total">R$ 27,70</p>
+                </div>
+                <button class="pedir" onclick="finalizarPedido()">Tudo certo, pode pedir!</button>
+                <p class="cancelar" onclick="cancelar()">Cancelar</p>
             </div>
         </section>
     </main>
@@ -122,5 +146,6 @@
         </button>
     </footer>
     <script src="script.js"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 </body>
 </html>

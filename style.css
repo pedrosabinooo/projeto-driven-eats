@@ -100,13 +100,13 @@ section img {
     font-size: 16px;
 }
 
-.option__item-name {
+.option__itemName {
     font-weight: 700;
     color: #333333;
     margin-top: 8px;
 }
 
-.option__item-description {
+.option__itemDescription {
     font-size: 15px;
     color: #A6A6A6;
     font-weight: 300;
@@ -117,18 +117,20 @@ section img {
     justify-content: space-between;
 }
 
-.option__item-price {
+.option__itemPrice {
     color: #000000;
     font-weight: 400;
     margin-bottom: 13px;
 }
 
-.selected-option {
-    box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 5px #32B72F;
+.option>div ion-icon {
+    font-size: 16px;
+    /* color: white; */
+    margin-right: 14px;
 }
 
-.selected-option>ion-icon {
-    font-size: 16px;
+.selected-option {
+    box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.25), inset 0px 0px 0px 5px #32B72F;
     color: #32B72F;
 }
 
@@ -156,6 +158,10 @@ button {
     border: none;
 }
 
+button .allChosen {
+    background: #32B72F;
+}
+
 footer div {
     width: 220px;
 }
@@ -164,4 +170,8 @@ footer p {
     color: white;
     font-weight: 400;
     font-size: 20px;
+}
+
+.hidden {
+    display: none;
 }
