@@ -21,6 +21,7 @@ header {
     flex-direction: column;
     justify-content: center;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    z-index: 1;
 }
 
 header span {
@@ -145,6 +146,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1;
 }
 
 button {
@@ -158,10 +160,6 @@ button {
     border: none;
 }
 
-button .allChosen {
-    background: #32B72F;
-}
-
 footer div {
     width: 220px;
 }
@@ -172,6 +170,80 @@ footer p {
     font-size: 20px;
 }
 
+/* Tela de confirmação */
+.confirmationScreen {
+    position: fixed;
+    background: rgba(255, 255, 255, 0.9);
+    top: 0;
+    bottom: -20px;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -23px;
+}
+
+.confirmationScreen>div {
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.25);
+    max-width: 377px;
+    border-radius: 9px;
+    background-color: #50D074;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    z-index: 3;
+}
+
+.confirmationScreen>div>div {
+    margin-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+.chosenOptionNames {
+    display: flex;
+    flex-direction: column;
+}
+
+.chosenOptionPrices {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.confirmationScreen span {
+    font-size: 22px;
+    color: #FFFFFF;
+    font-weight: 400;
+    margin-top: 12px;
+}
+
+.confirmationScreen strong {
+    font-weight: 700;
+}
+
+.confirmationScreen button p {
+    color: #50D074;
+    font-size: 22px;
+}
+
+.confirmationScreen button {
+    width: 100%;
+    height: 52px;
+    margin-top: 24px;
+    font-weight: bold;
+    background: #FFFFFF;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
 .hidden {
     display: none;
 }
